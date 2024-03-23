@@ -33,14 +33,19 @@
 			return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
 
-		let randomIndex = getRandomInt(0, backgrounds.length - 1);
+	        function setRandomBackground() {
+		        let randomIndex = getRandomInt(0, backgrounds.length - 1);
+		        document.querySelector('.background').style.backgroundImage = 'url(' + backgrounds[randomIndex] + ')';
+		}
 
-		document.querySelector('.background').style.backgroundImage = 'url(' + backgrounds[randomIndex] + ')';
-
+	        // Play quack sound and change the background when the page is clicked...
 		window.addEventListener('click', function() {
-			var audio = document.getElementById('backgroundAudio');
-			audio.play();
+			setRandomBackground();
+			document.getElementById('backgroundAudio').play();	
 		});
+
+	        // Choose initial background randomly...
+	        setRandomBackground();
     </script>
 </body>
 </html>
