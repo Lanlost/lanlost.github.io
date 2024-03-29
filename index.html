@@ -68,8 +68,8 @@
 		}
 
 	        function setRandomBackground() {
-		        let randomIndex = getRandomInt(0, backgrounds.length - 1);
-		        document.querySelector('.background').style.backgroundImage = 'url(' + (usePng ? backgroundsPng[randomIndex] : backgroundsJpg[randomIndex])  + ')';
+		        let randomIndex = getRandomInt(0, ( usePng ? backgroundsPng : backgroundsJpg ).length - 1);
+		        document.querySelector('.background').style.backgroundImage = 'url(' + ( usePng ? backgroundsPng[randomIndex] : backgroundsJpg[randomIndex] )  + ')';
 		}
 
 	        // Play quack sound and change the background when the page is clicked...
