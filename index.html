@@ -27,7 +27,7 @@
 	<audio id="backgroundAudio" src="https://lanlost.github.io/audio/mac-quack.mp3" autoplay></audio>
 	
     <script>
-		const backgrounds = [
+		const backgroundsJpg = [
 			'https://lanlost.github.io/images/01.jpg',
 			'https://lanlost.github.io/images/02.jpg',
 			'https://lanlost.github.io/images/03.jpg',
@@ -38,16 +38,38 @@
 			'https://lanlost.github.io/images/08.jpg',
 			'https://lanlost.github.io/images/09.jpg',
 			'https://lanlost.github.io/images/10.jpg',
-			'https://lanlost.github.io/images/11.jpg'
+			'https://lanlost.github.io/images/11.jpg',
+			'https://lanlost.github.io/images/12.jpg',
+			'https://lanlost.github.io/images/13.jpg',
+			'https://lanlost.github.io/images/14.jpg'
 		];
 
+	    	const backgroundsPng = [
+			'https://lanlost.github.io/images/01.png',
+			'https://lanlost.github.io/images/02.png',
+			'https://lanlost.github.io/images/03.png',
+			'https://lanlost.github.io/images/04.png',
+			'https://lanlost.github.io/images/05.png',
+			'https://lanlost.github.io/images/06.png',
+			'https://lanlost.github.io/images/07.png',
+			'https://lanlost.github.io/images/08.png',
+			'https://lanlost.github.io/images/09.png',
+			'https://lanlost.github.io/images/10.png',
+			'https://lanlost.github.io/images/11.png',
+			'https://lanlost.github.io/images/12.png',
+			'https://lanlost.github.io/images/13.png',
+			'https://lanlost.github.io/images/14.png'
+		];
+
+	    	let usePng = true;
+	    
 		function getRandomInt(min, max) {
 			return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
 
 	        function setRandomBackground() {
 		        let randomIndex = getRandomInt(0, backgrounds.length - 1);
-		        document.querySelector('.background').style.backgroundImage = 'url(' + backgrounds[randomIndex] + ')';
+		        document.querySelector('.background').style.backgroundImage = 'url(' + (usePng ? backgroundsPng[randomIndex] : backgroundsJpg[randomIndex])  + ')';
 		}
 
 	        // Play quack sound and change the background when the page is clicked...
